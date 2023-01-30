@@ -15,7 +15,7 @@ export default function PostForm() {
 
   async function updateDummyData(data: PostType) {
     setIsFetching(true)
-    await fetch("https://dummyjson.com/posts/add", {
+    await fetch("https://dummyjson.com/products/add", {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),
