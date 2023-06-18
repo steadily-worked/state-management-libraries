@@ -9,6 +9,7 @@ import {
   useSetRecoilState,
 } from "recoil"
 import { newUserIdState, postState } from "../atom"
+import { useZustandStore } from "../create"
 import Loading from "../loading"
 import { addUserIdSelector } from "../selector"
 
@@ -18,6 +19,8 @@ type PostType = {
 }
 
 export default function PostForm() {
+  const { userName } = useZustandStore()
+  console.log(userName)
   const [newPost, setNewPost] = useRecoilState<PostType>(postState)
   const currentPostState = useRecoilValue(postState)
   const [isFetching, setIsFetching] = useState<boolean>(false)
